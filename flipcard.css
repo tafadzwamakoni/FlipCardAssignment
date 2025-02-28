@@ -1,21 +1,128 @@
-<div class="theatre-container">
-  <div class="movie-card">
-    <div class="card-inner">
-      <div class="card-front">
-        <img src="https://en.wikipedia.org/wiki/Anora#/media/File:Anora_(2024_film)_poster.jpg" alt="Anora Poster">
-        <h2>Anora</h2>
-        <p class="rating">Rated R</p>
-      </div>
-      <div class="card-back">
-        <h3>Showtimes</h3>
-        <ul class="showtimes">
-          <li>3:00 PM</li>
-          <li>6:30 PM</li>
-          <li>9:45 PM</li>
-        </ul>
-        <p class="synopsis">Anora, a young woman from Brooklyn, gets her chance at a Cinderella story when she meets and marries the son of an oligarch. Once the news reaches Russia, her fairytale is threatened as the parents set out for New York to get the marriage annulled.</p>
-        <button class="book-now">Book Now</button>
-      </div>
-    </div>
-  </div>
-</div>
+$card-width: 300px;
+$card-height: 450px;
+$primary-color: #1a1a1a;
+$secondary-color: #4a4a4a;
+$accent-color: #e50914;
+$text-color: #ffffff;
+
+body {
+  background-color: $primary-color;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.theatre-container {
+  perspective: 1000px;
+}
+
+.movie-card {
+  width: $card-width;
+  height: $card-height;
+  cursor: pointer;
+
+  &:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.card-front {
+  background-color: $secondary-color;
+  color: $text-color;
+
+  img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    transition: transform .3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    text-shadow: rgba(0,0,0,0.5) 1px 1px; 
+   }
+
+   .rating {
+     background-color: $accent-color; 
+     color: $text-color; 
+     padding:5px; 
+     border-radius :5px; 
+     font-weight:bold; 
+   }
+}
+
+.card-back {
+   background-color:$secondary-color; 
+   color:$text-color; 
+   transform :rotateY(180deg); 
+
+   h3 { 
+     color:$accent-color; 
+     margin-bottom :10px; 
+   }
+
+   .showtimes { 
+     list-style-type:none; 
+     padding :0; 
+     margin-bottom :20px; 
+
+     li { 
+       background-color :rgba(255,255,255,0.1); 
+       margin :5px ; 
+       padding :5px ; 
+       border-radius :5px; 
+     } 
+   }
+
+   .synopsis { 
+     font-size :0.9em; 
+     line-height :1.4; 
+     margin-bottom :20px; 
+   }
+
+   .book-now { 
+     background-color:$accent-color; 
+     color:$text-color; 
+     border:none; 
+     padding :10px ; 
+     border-radius :5px ; 
+     font-weight:bold; 
+     cursor:pointer; 
+
+     &:hover { 
+       background-color :darken($accent-color,10%); 
+     } 
+   }  
+}
