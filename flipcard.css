@@ -1,0 +1,21 @@
+<div class="theatre-container">
+  <div class="movie-card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://en.wikipedia.org/wiki/Anora#/media/File:Anora_(2024_film)_poster.jpg" alt="Anora Poster">
+        <h2>Anora</h2>
+        <p class="rating">Rated R</p>
+      </div>
+      <div class="card-back">
+        <h3>Showtimes</h3>
+        <ul class="showtimes">
+          <li>3:00 PM</li>
+          <li>6:30 PM</li>
+          <li>9:45 PM</li>
+        </ul>
+        <p class="synopsis">Anora, a young woman from Brooklyn, gets her chance at a Cinderella story when she meets and marries the son of an oligarch. Once the news reaches Russia, her fairytale is threatened as the parents set out for New York to get the marriage annulled.</p>
+        <button class="book-now">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
